@@ -1,0 +1,41 @@
+<membraneSystem type="ENPS" 
+    xmlns="http://www.example.org">
+    <membrane name="m1">
+        <region>
+            <memory>
+                <variable initialValue="1" input="true" output="true">x_1_1</variable>
+                <variable initialValue="8" input="true" output="true">x_2_1</variable>
+                <variable initialValue="2000000" stop="true">e_1_1</variable>
+            </memory>
+            <rulesList>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_1_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <times />
+                                <ci>x_1_1</ci>
+                                <ci>x_2_1</ci>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_2_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <ci>x_2_1</ci>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+            </rulesList>
+        </region>
+        <children />
+    </membrane>
+</membraneSystem>

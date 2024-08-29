@@ -1,0 +1,142 @@
+<membraneSystem type="ENPS" 
+    xmlns="http://www.example.org">
+    <membrane name="m1">
+        <region>
+            <memory>
+                <variable initialValue="0" input="true" output="true">x_1_1</variable>
+                <variable initialValue="1" input="true" output="true">x_2_1</variable>
+                <variable initialValue="1" input="true" output="true">x_3_1</variable>
+                <variable initialValue="1" input="true" output="true">x_4_1</variable>
+                <variable initialValue="10" input="true" output="true">x_5_1</variable>
+                <variable initialValue="20" input="true" output="true">x_6_1</variable>
+                <variable initialValue="32" input="true" output="true">x_7_1</variable>
+                <variable initialValue="16" input="true" output="true">x_8_1</variable>
+                <variable initialValue="1" input="true" output="true">x_9_1</variable>
+                <variable initialValue="2000000" stop="true">e_1_1</variable>
+            </memory>
+            <rulesList>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_5_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <add />
+                                <ci>x_5_1</ci>
+                                <apply>
+                                    <minus />
+                                    <ci>x_1_1</ci>
+                                    <ci>x_1_1</ci>
+                                </apply>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_9_1</repartitionVariable>
+                        <repartitionVariable contribution="1">x_1_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <times />
+                                <cn>2</cn>
+                                <ci>x_9_1</ci>
+                                <ci>x_5_1</ci>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_6_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <ci>x_6_1</ci>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_2_1</repartitionVariable>
+                        <repartitionVariable contribution="1">x_1_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <times />
+                                <cn>2</cn>
+                                <ci>x_2_1</ci>
+                                <ci>x_6_1</ci>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_7_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <ci>x_7_1</ci>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_3_1</repartitionVariable>
+                        <repartitionVariable contribution="1">x_1_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <times />
+                                <cn>2</cn>
+                                <ci>x_3_1</ci>
+                                <ci>x_7_1</ci>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_8_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <ci>x_8_1</ci>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+                <rule>
+                    <repartitionProtocol>
+                        <repartitionVariable contribution="1">x_4_1</repartitionVariable>
+                        <repartitionVariable contribution="1">x_1_1</repartitionVariable>
+                    </repartitionProtocol>
+                    <productionFunction>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <times />
+                                <cn>2</cn>
+                                <ci>x_4_1</ci>
+                                <ci>x_8_1</ci>
+                            </apply>
+                        </math>
+                    </productionFunction>
+                    <enzyme>e_1_1</enzyme>
+                </rule>
+            </rulesList>
+        </region>
+        <children />
+    </membrane>
+</membraneSystem>
